@@ -1,28 +1,31 @@
 
-// const restuArray =[{name:"KFC",rating:4.2},{name:"Pizza Hut",rating:4.6}]
-const restuArray = "restaurant";
-
 function topRatedRestaurant(restaurants) {
-    // Write your code here
-    console.log('check--',Array.isArray(restaurants));
-    console.log('empty--',restaurants.length===0);
-    
-    
-       if(!Array.isArray(restaurants) || restaurants.length===0){
-        return 'Invalid'
-       }
- 
-    // Write your code here 
-        let largeShop = restaurants[0];
-    for(let i = 0; i< restaurants.length; i++){
-           if(restaurants[i].rating > largeShop.rating){
-              largeShop = restaurants[i] 
-           }
-       
+    if (!Array.isArray(restaurants) || restaurants.length === 0) {
+        return "Invalid";
     }
-        console.log('shop', largeShop);
-        return largeShop.name.toUpperCase()
 
+    let topRestaurant = restaurants[0];
+    for (let i = 0; i < restaurants.length; i++) {
+        if (restaurants[i].rating > topRestaurant.rating) {
+            topRestaurant = restaurants[i];
+        }
+    }
 
+    return topRestaurant.name.toUpperCase();
 }
- console.log('call me' ,topRatedRestaurant(restuArray));
+
+const outPut1 = [
+    {name: "Chillox", rating: 4.5},
+    {name: "Sultan's Dine", rating: 4.8},
+];
+const outPut2 = [
+    {name: "KFC", rating: 4.2},
+    {name: "Pizza Hut", rating: 4.6},
+];
+const outPut3 = [];
+const outPut4 = "restaurants";
+
+console.log("call me", topRatedRestaurant(outPut1)); //SULTAN'S DINE
+console.log("call me", topRatedRestaurant(outPut2)); //PIZZA HUT
+console.log("call me", topRatedRestaurant(outPut3)); //Invalid
+console.log("call me", topRatedRestaurant(outPut4)); //Invalid

@@ -15,4 +15,9 @@ function calculateAiCost(tokensUsed) {
     }
 }
 
-console.log(calculateAiCost(600));
+console.log(calculateAiCost(300)); // 0
+console.log(calculateAiCost(500)); // 0
+console.log(calculateAiCost(650)); // 5
+console.log(calculateAiCost(1000)); // 25
+console.log(calculateAiCost(-10)); // Invalid
+console.log(calculateAiCost("500")); // Invalid

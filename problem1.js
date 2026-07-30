@@ -1,70 +1,25 @@
-// function matchWinner(teamAGoals, teamBGoals) {
-//      console.log('team a:', teamAGoals, 'Team b:1', teamBGoals);
-
-//   console.log(typeof teamAGoals, typeof teamBGoals);
-
-//    if(typeof teamAGoals == "number" && teamBGoals == "number"){
-//    console.log('jod team a:', teamAGoals, 'Team b:', teamBGoals);
-
-//       if(teamAGoals > teamBGoals){
-//         return "Team A Won"
-//     }else if(teamBGoals > teamAGoals){
-//        return "Team B Won"
-//     } else if(teamAGoals === teamBGoals){
-//         return "Draw"
-//     }
-//   }
-
-//    else{
-//     return "Invalid"
-//    }
-
-// }
-
-//  console.log(matchWinner(1,5));
-
-// function matchWinner(teamAGoals, teamBGoals) {
-//      console.log('team a:', teamAGoals, 'Team b:', teamBGoals);
-
-//   console.log(typeof teamAGoals, typeof teamBGoals);
-
-//       console.log("TEAM A",typeof teamAGoals == "number");
-//       console.log("TEAM B",typeof teamBGoals == "number");
-
-//    if(typeof teamAGoals !== "number" && typeof teamBGoals !== "number"){
-//    console.log('jod team a:', teamAGoals, 'Team b:', teamBGoals);
-//      return "Invalid"
-//   } else{
-//       if(teamAGoals > teamBGoals){
-//         return "Team A Won"
-//     }else if(teamBGoals > teamAGoals){
-//        return "Team B Won"
-//     } else if(teamAGoals === teamBGoals){
-//         return "Draw"
-//     }
-//   }
-// }
-
-//  console.log('FINAL RESULT: ', matchWinner(3,null));
 
 function matchWinner(teamAGoals, teamBGoals) {
-    console.log("team a:", teamAGoals, "Team b:", teamBGoals);
-    console.log(typeof teamAGoals, typeof teamBGoals);
-    console.log("TEAM A", typeof teamAGoals == "number");
-    console.log("TEAM B", typeof teamBGoals == "number");
-
-    if (typeof teamAGoals <= 0 !== "number" && typeof teamBGoals < 0 !== "number") {
-        console.log("jod team a:", teamAGoals, "Team b:", teamBGoals);
-        return "Invalid";
+    if(typeof teamAGoals !== "number" || typeof teamBGoals !== "number"){
+      return "Invalid"
     }
-
-    if (teamAGoals > teamBGoals) {
-        return "Team A Won";
-    } else if (teamBGoals > teamAGoals) {
-        return "Team B Won";
-    } else if (teamAGoals === teamBGoals) {
-        return "Draw";
+    if(teamAGoals > teamBGoals){
+        return "Team A Won"
+    } else if(teamBGoals > teamAGoals){
+        return "Team B Won"
+    } else {
+        return "Draw"
     }
 }
 
-console.log("FINAL RESULT: ", matchWinner(3, 0));
+
+console.log('A:',matchWinner(2,1))
+console.log('B:',matchWinner(2,3))
+console.log('C:',matchWinner(2,2))
+console.log('C:',matchWinner(0,0))
+console.log('d:',matchWinner("3",2))
+console.log('e:',matchWinner(true,"2"))
+console.log('f:',matchWinner(null,"2"))
+console.log('g:',matchWinner([],"2"))
+
+
